@@ -1,4 +1,4 @@
-@extends('page')
+@extends('layouts.page')
 
 @section('main')
 
@@ -17,13 +17,13 @@
 
     <div class="featured">
 
-        <h2 class="section-title">Featured Content</h2>
+        <h2 class="section-title">Featured</h2>
         <div class="cards-centered">
             <div class="card-set">
                 <div class="card">
                     <div class="card_image">
                         <a href="#">
-                            <img src="https://unsplash.it/275" class="card_image" alt="" style="">
+                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
@@ -38,7 +38,7 @@
                 <div class="card">
                     <div class="card_image">
                         <a href="#">
-                            <img src="https://unsplash.it/275" class="card_image" alt="" style="">
+                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
@@ -55,7 +55,7 @@
                 <div class="card">
                     <div class="card_image">
                         <a href="#">
-                            <img src="https://unsplash.it/275" class="card_image" alt="" style="">
+                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
@@ -70,7 +70,7 @@
                 <div class="card">
                     <div class="card_image">
                         <a href="#">
-                            <img src="https://unsplash.it/275" class="card_image" alt="" style="">
+                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">

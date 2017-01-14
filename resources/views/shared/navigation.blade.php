@@ -51,6 +51,7 @@
                                     <span class="meta dropdown-link">Register</span>
                                 </a>
                             </li>
+
                         @else
 
                         <li class="">
@@ -62,7 +63,19 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
+
                         @endif
+
+                        @permission('edit-site')
+
+                        <li class="">
+                            <a class="nav-item" href="/admin">
+                                <span class="meta dropdown-link">Manage</span>
+                            </a>
+                        </li>
+
+                        @endpermission
+
                         </ul>
                     </ul>
                 </li>

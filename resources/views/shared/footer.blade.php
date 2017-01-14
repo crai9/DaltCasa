@@ -6,10 +6,10 @@
                 Email: <a href="mailto:daltcasa@gmail.com">daltcasa@gmail.com</a>
             </li>
             <li>
-                Phone: 0734253453
+                Phone: 07519738325
             </li>
             <li>
-                <a href="https://daltcasa.com/contact">Leave a message</a>
+                <a href="/contact">Leave a message</a>
             </li>
         </ul>
         <ul class="footer-media">

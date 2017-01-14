@@ -9,6 +9,7 @@
     <meta name="description" content="A members-only music community, providing an eclectic, international, and
      underground line-up, along with a superb crowd.">
     <link rel="icon" href="/dc-black.png" sizes="150x150" type="image/png">
+    <link rel="stylesheet" href="/css/app.css" type="text/css" media="all">
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all">
 </head>
 <body class="category category-design category-16 index top-nav design">

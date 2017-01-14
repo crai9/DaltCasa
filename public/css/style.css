@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+.list-group{
+	margin-top: 20px;
+}
+
+.main{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.panel-spacing {
+	margin-top: 15px;
+}
+
 footer {
 	position: relative;
 	bottom: 0px;
@@ -87,6 +100,8 @@ footer {
 }
 
 .grey {
+	border-top: 1px solid hsl(211, 20%, 91%);
+	border-bottom: 1px solid hsl(211, 1%, 80%);
 	background-color: #eee;
 }
 
@@ -94,8 +109,6 @@ footer {
 	overflow: hidden;
 	float: left;
 }
-
-
 
 .card_image {
 	max-width: 100%;
@@ -144,6 +157,8 @@ footer {
 	width: 100%;
 	position: relative;
 	min-height: 1000px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 div {
@@ -161,7 +176,7 @@ div {
 	font-weight: bold;
 	margin-bottom: 40px;
 	text-align: center;
-	text-shadow: 1px 1px 7px #555;
+	/* text-shadow: 1px 1px 7px #555; */
 }
 
 .featured {
@@ -221,7 +236,7 @@ div {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Trebuchet MS;
+	font-family: 'Open Sans', sans-serif;
 	font-size:16px;
 	font-weight:bold;
 	font-style:italic;
@@ -237,6 +252,8 @@ div {
 	background:linear-gradient(to bottom, #378de5 5%, #337bc4 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#337bc4',GradientType=0);
 	background-color:#378de5;
+	color: #fff;
+	text-decoration: none;
 }
 .link-button:active {
 	position:relative;
@@ -310,6 +327,7 @@ ul {
 	font-size: 45px;
 	line-height: 38px;
 	letter-spacing: .0075em;
+	margin-bottom: 30px;
 }
 
 .nav-diff:hover {
@@ -391,13 +409,14 @@ li {
 }
 
 p {
-	font-family: georgia, 'times new roman', times, serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 17px;
 	font-size: 1.0625rem;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 1.625rem;
 	text-align: left;
+	margin: 15px 0px;
 }
 
 body {
@@ -408,6 +427,7 @@ body {
 
 body, html {
 	height: 100%;
+	font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -422,7 +442,6 @@ section {
 }
 
 article {
-	white-space: pre-line;
 	max-width: 600px;
 	margin: 0 auto;
 }
@@ -433,7 +452,7 @@ article {
 	box-sizing: border-box;
 }
 
-.nav-item {
+.nav-item, .nav-item:hover, a.nav-item:hover {
 	text-decoration: none;
 }
 
@@ -586,6 +605,10 @@ ul {
 
 .nav-section {
 	width: 33.33%;
+}
+
+.nav-section a:hover {
+	text-decoration: none;
 }
 
 .nav-section:hover span {

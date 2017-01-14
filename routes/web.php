@@ -11,9 +11,19 @@
 |
 */
 
+Route::group(['prefix' => 'admin', 'middleware' => ['permission:edit-site']], function() {
+    Route::resource('/article', 'ArticleController', ['except' => ['show']]);
+    Route::post('/article/{id}/delete', 'ArticleController@destroy');
+    Route::post('/article/{id}/update', 'ArticleController@update');
+    Route::get('/', 'SettingsController@home');
+});
+
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/articles/{slug}', 'GeneralController@showArticle');
+
 Route::get('/music', function () {
     return view('music');
 });
@@ -25,6 +35,9 @@ Route::get('/events', function () {
 });
 Route::get('/about', function () {
     return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 Auth::routes();
