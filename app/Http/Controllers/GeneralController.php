@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FeaturedItem;
 use Illuminate\Http\Request;
 use App\Article;
 
@@ -32,5 +33,19 @@ class GeneralController extends Controller
         }
 
         return view('article', ['article' => $article]);
+    }
+
+    public function listArticles()
+    {
+        $articles = Article::where('published', 1)->get();
+
+        return view('articles', ['articles' => $articles]);
+    }
+
+    public function homePage()
+    {
+        $featuredItems = FeaturedItem::all();
+
+        return view('home', ['featuredItems' => $featuredItems]);
     }
 }

@@ -22,14 +22,14 @@
             <div class="card-set">
                 <div class="card">
                     <div class="card_image">
-                        <a href="#">
-                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
+                        <a href="{{ $featuredItems->get(0)->link }}">
+                            <img src="{{ $featuredItems->get(0)->image_url }}" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
                         <h3 class="card_title">
-                            <a href="#">
-                                Article One
+                            <a href="{{ $featuredItems->get(0)->link }}">
+                                {{ $featuredItems->get(0)->text }}
                             </a>
                         </h3>
                     </div>
@@ -37,14 +37,14 @@
 
                 <div class="card">
                     <div class="card_image">
-                        <a href="#">
-                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
+                        <a href="{{ $featuredItems->get(1)->link }}">
+                            <img src="{{ $featuredItems->get(1)->image_url }}" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
                         <h3 class="card_title">
-                            <a href="#">
-                                Event One
+                            <a href="{{ $featuredItems->get(1)->link }}">
+                                {{ $featuredItems->get(1)->text }}
                             </a>
                         </h3>
                     </div>
@@ -54,14 +54,14 @@
             <div class="card-set">
                 <div class="card">
                     <div class="card_image">
-                        <a href="#">
-                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
+                        <a href="{{ $featuredItems->get(2)->link }}">
+                            <img src="{{ $featuredItems->get(2)->image_url }}" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
                         <h3 class="card_title">
-                            <a href="#">
-                                Article Two
+                            <a href="{{ $featuredItems->get(2)->link }}">
+                                {{ $featuredItems->get(2)->text }}
                             </a>
                         </h3>
                     </div>
@@ -69,14 +69,14 @@
 
                 <div class="card">
                     <div class="card_image">
-                        <a href="#">
-                            <img src="http://placehold.it/275?text=Placeholder" class="card_image" alt="" style="">
+                        <a href="{{ $featuredItems->get(3)->link }}">
+                            <img src="{{ $featuredItems->get(3)->image_url }}" class="card_image" alt="" style="">
                         </a>
                     </div>
                     <div class="card_details">
                         <h3 class="card_title">
-                            <a href="#">
-                                Event Two
+                            <a href="{{ $featuredItems->get(3)->link }}">
+                                {{ $featuredItems->get(3)->text }}
                             </a>
                         </h3>
                     </div>

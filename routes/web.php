@@ -18,17 +18,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['permission:edit-site']], fu
     Route::get('/', 'SettingsController@home');
 });
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Route::get('/articles/{slug}', 'GeneralController@showArticle');
+Route::get('/articles', 'GeneralController@listArticles');
+Route::get('/', 'GeneralController@homePage');
+Route::get('/home', 'HomeController@index');
 
 Route::get('/music', function () {
     return view('music');
-});
-Route::get('/articles', function () {
-    return view('articles');
 });
 Route::get('/events', function () {
     return view('events');
@@ -42,4 +38,3 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
