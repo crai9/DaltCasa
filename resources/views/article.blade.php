@@ -10,7 +10,7 @@
         <br>
         <p style="font-weight: bold"> {{ $article->introduction}} </p>
 
-        <p style="white-space: pre-line""> {{ $article->body }} </p>
+        <p style="white-space: pre-line"> {{ $article->body }} </p>
 
     </article>
 

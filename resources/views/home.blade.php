@@ -18,9 +18,13 @@
     <div class="featured">
 
         <h2 class="section-title">Featured</h2>
+        <hr width="95%" size="6">
         <div class="cards-centered">
             <div class="card-set">
                 <div class="card">
+                    <span class="card-icon">
+                        <span class="glyphicon glyphicon-{{ $featuredItems->get(0)->type }}" aria-hidden="true"></span>
+                    </span>
                     <div class="card_image">
                         <a href="{{ $featuredItems->get(0)->link }}">
                             <img src="{{ $featuredItems->get(0)->image_url }}" class="card_image" alt="" style="">
@@ -36,6 +40,9 @@
                 </div>
 
                 <div class="card">
+                    <span class="card-icon">
+                        <span class="glyphicon glyphicon-{{ $featuredItems->get(1)->type }}" aria-hidden="true"></span>
+                    </span>
                     <div class="card_image">
                         <a href="{{ $featuredItems->get(1)->link }}">
                             <img src="{{ $featuredItems->get(1)->image_url }}" class="card_image" alt="" style="">
@@ -53,6 +60,9 @@
 
             <div class="card-set">
                 <div class="card">
+                    <span class="card-icon">
+                        <span class="glyphicon glyphicon-{{ $featuredItems->get(2)->type }}" aria-hidden="true"></span>
+                    </span>
                     <div class="card_image">
                         <a href="{{ $featuredItems->get(2)->link }}">
                             <img src="{{ $featuredItems->get(2)->image_url }}" class="card_image" alt="" style="">
@@ -68,6 +78,9 @@
                 </div>
 
                 <div class="card">
+                    <span class="card-icon">
+                        <span class="glyphicon glyphicon-{{ $featuredItems->get(3)->type }}" aria-hidden="true"></span>
+                    </span>
                     <div class="card_image">
                         <a href="{{ $featuredItems->get(3)->link }}">
                             <img src="{{ $featuredItems->get(3)->image_url }}" class="card_image" alt="" style="">

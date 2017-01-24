@@ -15,7 +15,7 @@
             @endif
             @foreach ($articles as $article)
                 <li class="list-group-item">
-                    <a href="/articles/{{ $article->unique_slug }}">{{ $article->title }}</a>
+                    <a href="/article/{{ $article->unique_slug }}">{{ $article->title }}</a>
                 </li>
             @endforeach
 
