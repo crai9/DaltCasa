@@ -8,7 +8,7 @@
         {{ csrf_field() }}
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-
+                <a href="/admin">&laquo; Admin home</a>
                 <div class="panel panel-default panel-spacing">
                     <div class="panel-body">
                         <div class="form-group{{ $errors->has('text1') ? ' has-error' : '' }}">

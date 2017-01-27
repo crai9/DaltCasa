@@ -86,6 +86,10 @@ footer {
 	box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, .19), 3px 0 3px 0 rgba(0, 0, 0, .19), 0 3px 3px 0 rgba(0, 0, 0, .23);
 }
 
+.faded-icon {
+	color: #665858;
+}
+
 .home-info-right p {
 	max-width: 414px;
 	white-space: pre-line;
@@ -112,13 +116,13 @@ footer {
 
 .card-icon {
 	position: absolute;
-	color: #fff;
+	color: #ce1313;
 	border-radius: 2px;
 	padding: 4px 4px;
-	background: #573e81;
+	background: #fff;
 	right: 12px;
 	top: 10px;
-	z-index: 20;
+	z-index: 4;
 	font-size: 16px;
 }
 

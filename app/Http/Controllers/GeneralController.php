@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\FeaturedItem;
 use App\Article;
 use App\Music;
+use Parsedown;
 
 class GeneralController extends Controller
 {
@@ -18,7 +20,11 @@ class GeneralController extends Controller
             abort(404);
         }
 
-        return view('article', ['article' => $article]);
+        $author = User::find($article->author);
+
+        $parsedown = new Parsedown();
+        $article->body = $parsedown->text($article->body);
+        return view('article', ['article' => $article, 'author' => $author]);
     }
 
     public function showMusic($slug)

@@ -7,6 +7,7 @@
     <div class="main">
 
         <h1 class="post-title">Music List</h1>
+        <a href="/admin">&laquo; Admin home</a>
         <ul class="list-group">
             @if(count($musics) == 0)
                 <li class="list-group-item">

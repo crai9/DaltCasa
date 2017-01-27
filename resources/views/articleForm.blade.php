@@ -8,6 +8,7 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                <a href="/admin">&laquo; Admin home</a>
                 <div class="panel panel-default panel-spacing">
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/article') }}">
@@ -51,6 +52,31 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
                                     </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                                <label for="category" class="col-md-4 control-label">Category</label>
+
+                                <div class="col-md-3">
+                                    <input id="category" value="{{ old('body') }}" class="form-control" name="category">
+
+                                    @if ($errors->has('category'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('category') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-3">
+                                    <select id="category-drop" class="form-control" name="category-drop">
+                                        <option value=""></option>
+                                    </select>
+                                    @if ($errors->has('category-drop'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('category-drop') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>

@@ -8,6 +8,7 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                <a href="/admin">&laquo; Admin home</a>
                 <div class="panel panel-default panel-spacing">
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="/admin/article/{{ $article->id }}/update">
