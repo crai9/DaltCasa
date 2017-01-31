@@ -13,6 +13,10 @@
 	margin-top: 15px;
 }
 
+.margin-top-15 {
+	margin-top: 15px;
+}
+
 footer {
 	position: relative;
 	bottom: 0px;
@@ -90,6 +94,24 @@ footer {
 	color: #665858;
 }
 
+.introduction {
+	font-weight: bold;
+}
+
+article p {
+	max-width: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.article-details {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+article p img, article img {
+	max-width: 100%;
+}
 .home-info-right p {
 	max-width: 414px;
 	white-space: pre-line;
@@ -341,9 +363,12 @@ ul {
 	text-transform: none;
 	text-align: center;
 	font-size: 45px;
-	line-height: 38px;
 	letter-spacing: .0075em;
+	line-height: 1.2em;
 	margin-bottom: 30px;
+	padding-left: 5px;
+	padding-right: 5px;
+
 }
 
 .nav-diff:hover {

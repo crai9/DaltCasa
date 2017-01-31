@@ -42,11 +42,64 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="body" class="col-md-4 control-label"></label>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        Show formatting info
+                                    </button>
+
+                                    <div class="collapse margin-top-15" id="collapseExample">
+                                        <div class="well well-lg" style="white-space: pre-line;">
+                                            <b>Links:</b>
+
+                                                [Text to show for link](https://www.google.com)
+                                            or
+                                                [https://www.google.com]
+
+                                            <b>Images:</b>
+
+                                            ![image text](http://daltcasa.com/img/dc.png)
+
+                                            <b>Header Texts:</b>
+
+                                            # Largest text
+                                            ## 2nd largest text
+                                            ### 3rd largest text
+                                            #### 4th largest text
+                                            ##### 5th largest text
+                                            ###### 6th largest text
+
+                                            <b>Numbered List:</b>
+
+                                            1. First ordered list item
+                                            2. Another item
+
+                                            <b>Bullet points:</b>
+
+                                            * First item
+                                            * Second item
+
+                                            <b>Emphasis:</b>
+
+                                            *Bold*
+                                            _Italics_
+                                            ~~Strikethrough~~
+
+                                            <b>Quotes:</b>
+
+                                            > Blockquotes are very handy in email to emulate reply text.
+                                            > This line is part of the same quote.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                                 <label for="body" class="col-md-4 control-label">Body</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="body" rows="5" class="form-control" name="body" required>{{ old('body') }}</textarea>
+                                    <textarea id="body" rows="12" class="form-control" name="body" required>{{ old('body') }}</textarea>
 
                                     @if ($errors->has('body'))
                                     <span class="help-block">
@@ -60,22 +113,25 @@
                                 <label for="category" class="col-md-4 control-label">Category</label>
 
                                 <div class="col-md-3">
-                                    <input id="category" value="{{ old('body') }}" class="form-control" name="category">
-
-                                    @if ($errors->has('category'))
+                                    <select id="category-drop" class="form-control" name="category-drop">
+                                        <option value="0">Pick Existing Category</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->category }}">{{ $category->category }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('category-drop'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('category') }}</strong>
+                                            <strong>{{ $errors->first('category-drop') }}</strong>
                                         </span>
                                     @endif
                                 </div>
 
                                 <div class="col-md-3">
-                                    <select id="category-drop" class="form-control" name="category-drop">
-                                        <option value=""></option>
-                                    </select>
-                                    @if ($errors->has('category-drop'))
+                                    <input id="category" value="{{ old('category') }}" class="form-control" placeholder="Or enter new Category" name="category">
+
+                                    @if ($errors->has('category'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('category-drop') }}</strong>
+                                            <strong>{{ $errors->first('category') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -103,6 +159,9 @@
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
                                         Save
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        Preview (not implemented)
                                     </button>
                                 </div>
                             </div>
