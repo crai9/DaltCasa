@@ -1,5 +1,13 @@
 @extends('layouts.page')
 
+@section('css', '<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">')
+@section('js')
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script>
+        var simplemde = new SimpleMDE({ element: document.getElementById("body") });
+    </script>
+@endsection()
+
 @section('main')
 
 <div class="container">
@@ -44,52 +52,14 @@
 
                             <div class="form-group">
                                 <label for="body" class="col-md-4 control-label"></label>
-                                <div class="col-md-6">
-                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <div class="col-md-7">
+                                    <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                         Show formatting info
                                     </button>
 
                                     <div class="collapse margin-top-15" id="collapseExample">
-                                        <div class="well well-lg" style="white-space: pre-line;">
-                                            <b>Links:</b>
-
-                                                [Text to show for link](https://www.google.com)
-                                            or
-                                                [https://www.google.com]
-
-                                            <b>Images:</b>
-
-                                            ![image text](http://daltcasa.com/img/dc.png)
-
-                                            <b>Header Texts:</b>
-
-                                            # Largest text
-                                            ## 2nd largest text
-                                            ### 3rd largest text
-                                            #### 4th largest text
-                                            ##### 5th largest text
-                                            ###### 6th largest text
-
-                                            <b>Numbered List:</b>
-
-                                            1. First ordered list item
-                                            2. Another item
-
-                                            <b>Bullet points:</b>
-
-                                            * First item
-                                            * Second item
-
-                                            <b>Emphasis:</b>
-
-                                            *Bold*
-                                            _Italics_
-                                            ~~Strikethrough~~
-
-                                            <b>Quotes:</b>
-
-                                            > Blockquotes are very handy in email to emulate reply text.
-                                            > This line is part of the same quote.
+                                        <div class="well well-lg formatting">
+                                            @include('formatting')
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +69,7 @@
                                 <label for="body" class="col-md-4 control-label">Body</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="body" rows="12" class="form-control" name="body" required>{{ old('body') }}</textarea>
+                                    <textarea id="body" rows="12" class="form-control" name="body">{{ old('body') }}</textarea>
 
                                     @if ($errors->has('body'))
                                     <span class="help-block">

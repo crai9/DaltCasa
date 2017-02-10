@@ -146,6 +146,7 @@ article p img, article img {
 	top: 10px;
 	z-index: 4;
 	font-size: 16px;
+	opacity: .7;
 }
 
 .card_image {
@@ -428,6 +429,19 @@ ul {
 	margin-left: auto;
 }
 
+.formatting {
+	white-space: pre-line;
+	font-family: Menlo, Monaco, Consolas,'Courier New', monospace;
+	padding: 10px;
+}
+
+article ul {
+	list-style: initial;
+	line-height: 1.5;
+	list-style-type: initial;
+	padding-left: 40px;
+}
+
 html,
 body,
 div,
@@ -451,8 +465,6 @@ li {
 
 p {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 17px;
-	font-size: 1.0625rem;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 1.625rem;
@@ -483,8 +495,14 @@ section {
 }
 
 article {
-	max-width: 600px;
-	margin: 0 auto;
+	max-width: 650px;
+	margin: 30px auto;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 30px;
+	background: #fff;
+	box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, .19), 0px 0px 3px 0 rgba(0, 0, 0, .19);
 }
 
 *,
