@@ -30,6 +30,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/article/{slug}', 'GeneralController@showArticle');
 Route::get('/articles', 'GeneralController@listArticles');
+
 Route::get('/music/{slug}', 'GeneralController@showMusic');
 Route::get('/music', 'GeneralController@music');
 

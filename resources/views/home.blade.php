@@ -15,8 +15,9 @@
 		</span>
     </div>
 
-    <div class="featured">
+    <div class="break"></div>
 
+    <div class="featured">
         <h2 class="section-title">Featured</h2>
         <hr width="95%" size="6">
         <div class="cards-centered">

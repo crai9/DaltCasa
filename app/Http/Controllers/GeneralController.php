@@ -54,7 +54,9 @@ class GeneralController extends Controller
 
     public function music()
     {
-        return view('music');
+        $music = Music::where('published', '=', 1)->get();
+
+        return view('music', ['musics' => $music]);
     }
 
     public function about()

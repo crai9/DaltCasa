@@ -218,6 +218,12 @@ div {
 	/* text-shadow: 1px 1px 7px #555; */
 }
 
+.break {
+	width: 100%;
+	background: #F7F7F7;
+	height: 6px;
+}
+
 .featured {
 	padding: 0px 0px 0px 0px;
 	overflow: hidden;
@@ -229,7 +235,6 @@ div {
 	height: 500px;
 	padding: 120px 60px 10% 10%;
 	margin: -2px -2px -2px -2px;
-	border-bottom: 5px solid #eee;
 }
 
 .hero span {
