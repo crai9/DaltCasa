@@ -15,32 +15,37 @@
         <ul class="footer-media">
             <li>
                 <a href="https://www.facebook.com/daltcasa/">
-                    <img src="/img/Facebook.png">
+                    <img src="/img/icons/facebook-128.png">
                 </a>
             </li>
             <li>
                 <a href="https://twitter.com/daltcasa">
-                    <img src="/img/Twitter.png">
+                    <img src="/img/icons/twitter-128.png">
                 </a>
             </li>
             <li>
                 <a href="https://instagram.com/daltcasa">
-                    <img src="/img/Instagram.png">
+                    <img src="/img/icons/instagram-128.png">
                 </a>
             </li>
             <li>
                 <a href="https://www.youtube.com/channel/UCH1mCtw5EJogh9qsMBX4z9g">
-                    <img src="/img/Youtube.png">
+                    <img src="/img/icons/youtube-128.png">
                 </a>
             </li>
             <li>
                 <a href="https://soundcloud.com/daltcasa">
-                    <img src="/img/Soundcloud.png">
+                    <img src="/img/icons/sound_cloud-128.png">
                 </a>
             </li>
             <li>
                 <a href="https://plus.google.com/u/0/111641808587704233715">
-                    <img src="/img/Google-plus.png">
+                    <img src="/img/icons/google_-128.png">
+                </a>
+            </li>
+            <li>
+                <a href="http://snapchat.com">
+                    <img src="/img/icons/snapchat-128.png">
                 </a>
             </li>
         </ul>

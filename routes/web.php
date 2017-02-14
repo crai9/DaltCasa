@@ -28,8 +28,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['permission:edit-site']], fu
 Route::get('/', 'GeneralController@homePage');
 Route::get('/home', 'HomeController@index');
 
+
 Route::get('/article/{slug}', 'GeneralController@showArticle');
 Route::get('/articles', 'GeneralController@listArticles');
+Route::get('/articles/by/{id}', 'GeneralController@showWritersArticles');
 
 Route::get('/music/{slug}', 'GeneralController@showMusic');
 Route::get('/music', 'GeneralController@music');

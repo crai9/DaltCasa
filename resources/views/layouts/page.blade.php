@@ -12,7 +12,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="">
     <meta property="og:site_name" content="DaltCasa">
-    <meta property="og:image" content="/img/dc.png">
+    <meta property="og:image" content="@yield('image', '/img/default-image.png')">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:site" content="@daltcasa">
     <meta property="twitter:creator" content="@daltcasa">

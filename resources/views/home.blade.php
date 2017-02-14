@@ -108,7 +108,6 @@
             <div class="home-info-right">
 
                 <p>Dalt Casa originally started in Dalt Vila, throwing an intimate party every Tuesday in September, under the name "Dalt Mila". With an eclectic, international, and underground line-up, along with a superb crowd - we only thought it was right to bring the brand back home to Scotland for winter - renaming it "Dalt Casa", which in Catalan means "Top House".</p>
-                <br>
                 <p>Sign up today to stay informed about the latest Dalt Casa events and news.</p>
                 <br>
                 <span>

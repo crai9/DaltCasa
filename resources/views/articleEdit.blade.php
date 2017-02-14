@@ -36,6 +36,20 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+                                <label for="title" class="col-md-4 control-label">Image</label>
+
+                                <div class="col-md-6">
+                                    <input id="image" type="text" placeholder="Image URL" class="form-control" name="image" value="{{ empty(old('image')) ? $article->image : old('title') }}" required>
+
+                                    @if ($errors->has('image'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('introduction') ? ' has-error' : '' }}">
                                 <label for="introduction" class="col-md-4 control-label">Introduction</label>
 

@@ -7,6 +7,7 @@
     <div class="main">
 
         <h1 class="post-title">Admin Home</h1>
+
         <div class="list-group">
             <a href="/admin/article/create" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New article</a>
             <a href="/admin/article" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Manage articles</a>

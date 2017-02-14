@@ -20,11 +20,15 @@ class GeneralController extends Controller
             abort(404);
         }
 
-        $author = User::find($article->author);
-
         $parsedown = new Parsedown();
         $article->body = $parsedown->text($article->body);
-        return view('article', ['article' => $article, 'author' => $author]);
+        return view('article', ['article' => $article]);
+    }
+
+    public function showWritersArticles($id)
+    {
+        $articles = User::find($id)->articles;
+        return $articles;
     }
 
     public function showMusic($slug)
