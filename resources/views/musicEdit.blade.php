@@ -1,4 +1,11 @@
 @extends('layouts.page')
+@section('css', '<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">')
+@section('js')
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script>
+        var simplemde = new SimpleMDE({ element: document.getElementById("body") });
+    </script>
+@endsection()
 
 @section('main')
 
@@ -42,6 +49,42 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('embed-type') ? ' has-error' : '' }}">
+                                <label for="embed-type" class="col-md-4 control-label">Embed Type</label>
+
+                                <div class="col-md-6">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="embed-type" value="mixcloud" {{ $music->embed_type == 'mixcloud' ? 'checked' : '' }}>
+                                            MixCloud → "https://www.mixcloud.com/DALTCASA/dalt-casa-episode-i/"
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="embed-type" value="soundcloud" {{ $music->embed_type == 'soundcloud' ? 'checked' : '' }}>
+                                            SoundCloud → "https://soundcloud.com/daltcasa/track-name-here"
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="embed-type" value="youtube" {{ $music->embed_type == 'youtube' ? 'checked' : '' }}>
+                                            YouTube → "https://www.youtube.com/watch?v=12345ABCDEF"
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <span class="text-danger">If you don't use the above URL formats something will probably break</span>
+                                        </label>
+                                    </div>
+
+                                    @if ($errors->has('embed-type'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('embed-type') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('embed') ? ' has-error' : '' }}">
                                 <label for="introduction" class="col-md-4 control-label">Embed</label>
 
@@ -69,7 +112,7 @@
                                     @endif
                                 </div>
                             </div>
-
+                            @if($music->published == 0)
                             <div class="form-group{{ $errors->has('publish') ? ' has-error' : '' }}">
                                 <label for="publish" class="col-md-4 control-label">Publish?</label>
 
@@ -88,6 +131,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">

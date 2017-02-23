@@ -11,6 +11,11 @@ use Parsedown;
 
 class GeneralController extends Controller
 {
+    public function __construct()
+    {
+        $this->parsedown = new Parsedown();
+    }
+
 
     public function showArticle($slug)
     {
@@ -20,15 +25,20 @@ class GeneralController extends Controller
             abort(404);
         }
 
-        $parsedown = new Parsedown();
-        $article->body = $parsedown->text($article->body);
+        $article->body = $this->parsedown->text($article->body);
         return view('article', ['article' => $article]);
     }
 
     public function showWritersArticles($id)
     {
-        $articles = User::find($id)->articles;
-        return $articles;
+        $writer = User::find($id);
+
+        if(!$writer){
+            abort(404);
+        }
+
+        return $writer->articles;
+        //return Article::orderBy('created_at', 'desc')->paginate(3);
     }
 
     public function showMusic($slug)
@@ -39,6 +49,7 @@ class GeneralController extends Controller
             abort(404);
         }
 
+        $music->body = $this->parsedown->text($music->body);
         return view('showMusic', ['music' => $music]);
     }
 
@@ -58,7 +69,7 @@ class GeneralController extends Controller
 
     public function music()
     {
-        $music = Music::where('published', '=', 1)->get();
+        $music = Music::where('published', '=', 1)->orderBy('created_at', 'desc')->get();
 
         return view('music', ['musics' => $music]);
     }

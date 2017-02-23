@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
 .title {
 	margin-top: 0px;
     color: black;
@@ -272,13 +283,18 @@ div {
 	margin: -2px -2px -2px -2px;
 }
 
-.hero span {
+.hero span.hero-text {
 	position: relative;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 56px;
 	font-weight:900;
 	text-shadow: 0px 2px 7px #000;
 	color: white;
+}
+
+.hero span {
+	position: relative;
+	font-size: 56px;
 }
 
 .hero-image-cover {
@@ -399,11 +415,10 @@ ul {
 }
 
 .post-title {
-	font-weight: 400;
 	font-style: normal;
 	text-transform: none;
 	text-align: center;
-	font-size: 45px;
+	font-size: 48px;
 	letter-spacing: .0075em;
 	line-height: 1.2em;
 	margin-bottom: 30px;
@@ -970,7 +985,7 @@ ul {
 		transition: height .15s cubic-bezier(.33, .66, .66, 1);
 	}
 	.post-title {
-		font-size: 56px;
+		font-size: 48px;
 		line-height: 55px;
 	}
 	#nav-sections-wrap {

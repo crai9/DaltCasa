@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <a href="https://pictureperfect-recordings.com/" class="">
-                            <img src="https://pictureperfect-recordings.com/wp-content/uploads/2015/08/logo-ppr.jpg" class="img-responsive">
+                            <img src="/img/ppr.jpg" class="img-responsive">
                         </a>
                     </div>
                     <div class="col-sm-9">
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <a href="http://www.radiomagnetic.com/" class="">
-                            <img src="http://www.radiomagnetic.com/wp-content/uploads/2016/11/RMLogo_deckurl_black.png" class="img-responsive">
+                            <img src="/img/radio-magnetic.png" class="img-responsive">
                         </a>
                     </div>
                     <div class="col-sm-9">
@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <a href="https://www.facebook.com/theartibiza/" class="">
-                            <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/13557935_566812116832277_6285029081226469574_n.jpg?efg=eyJpIjoiYiJ9&oh=759f8d76c26df4fc3bae063d91f70d86&oe=5902FB6C" class="img-responsive">
+                            <img src="/img/theart.jpg" class="img-responsive">
                         </a>
                     </div>
                     <div class="col-sm-9">
@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <a href="https://www.discogs.com/user/daltcasa" class="">
-                            <img src="https://www.discogs.com/images/brand/discogs-logo.svg" class="img-responsive">
+                            <img src="/img/discogs-logo.svg" class="img-responsive">
                         </a>
                     </div>
                     <div class="col-sm-9">
@@ -95,6 +95,36 @@
                         </h3>
                         <p>The Discogs Marketplace connects buyers and sellers across the globe. With more than 23 million items available and thousands of sellers, this is the premier spot from new releases to hard to find gems. </p>
 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class=""></div>
+            <div class="col-md-10">
+                <h3>Other </h3>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div id="snapchat" class="col-md-12">
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="#" class="">
+                            <img src="/img/icons/snapchat-128.png" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3 class="title">
+                            <a href="#">Snapchat</a>
+                        </h3>
+                        <p>Add our Snapchat account: </p>
+                        <strong>"DaltCasa?" </strong>
                     </div>
                 </div>
                 <hr>
