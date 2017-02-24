@@ -21,6 +21,41 @@ class SettingsController extends Controller
         return view('admin');
     }
 
+    public function userSettings()
+    {
+        return view('userSettings')->with(['user' => Auth::user(), 'success' => false]);
+    }
+
+    public function userSettingsPost(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:2|max:40',
+            'email' => 'required|email',
+            'email-confirm' => 'required|email|same:email',
+            'phone-number' => '',
+            'location' => '',
+            'mailing-list' => 'in:yes,no',
+        ]);
+
+        $user = Auth::user();
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->location = $request->input('location');
+        $user->phone_number = $request->input('phone-number');
+
+        if($request->input('mailing-list') == 'yes'){
+            $user->mailing_list = true;
+        } else {
+            $user->mailing_list = false;
+
+        }
+
+        $user->save();
+
+        return view('userSettings')->with(['user' => $user, 'success' => true]);
+    }
+
     public function editFeatured()
     {
         $featuredItems = FeaturedItem::all();
@@ -106,13 +141,5 @@ class SettingsController extends Controller
         return redirect()->action('SettingsController@home');
     }
 
-    public function editMusic()
-    {
-        return view('')->with();
-    }
 
-    public function updateMusic(Request $request)
-    {
-        return redirect()->action('SettingsController@home');
-    }
 }

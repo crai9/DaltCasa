@@ -25,9 +25,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['permission:edit-site']], fu
 
 });
 
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/settings', 'SettingsController@userSettings');
+    Route::post('/settings', 'SettingsController@userSettingsPost');
+
+});
+
 Route::get('/', 'GeneralController@homePage');
 Route::get('/home', 'HomeController@index');
-
 
 Route::get('/article/{slug}', 'GeneralController@showArticle');
 Route::get('/articles', 'GeneralController@listArticles');
