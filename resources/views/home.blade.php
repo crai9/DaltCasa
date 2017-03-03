@@ -7,8 +7,10 @@
 <div class="container">
 
     <div class="hero">
-        <div class="hero-image-cover"></div>
+        <div class="hero-image-cover image-cover"></div>
+        <div class="hero-image-cover dots-cover"></div>
         <span class="hero-text">Welcome to Dalt Casa...</span>
+        <br>
         <br>
         <span>
 			<a href="/about" class="link-button">Learn more &raquo;</a>

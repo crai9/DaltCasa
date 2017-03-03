@@ -28,7 +28,6 @@ article h6 {
 .by {
 	font-size: 0.9em;
 	font-weight: normal;
-	font-style: italic;
 }
 
 .authors {
@@ -297,20 +296,36 @@ div {
 	font-size: 56px;
 }
 
+.image-cover {
+	background-image: url('../img/home-cover.jpg');
+	background-repeat: repeat-x;
+	background-position: 60% 20%;
+	filter: blur(1px);
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+}
+
+.twitter-tweet, article iframe, article p img {
+	margin: 0 auto;
+	display: block;
+}
+
+.dots-cover {
+	background-image: url('../img/dots.svg');
+	background-repeat: repeat;
+	opacity: 0.4;
+	background-size: 8px 6px;
+
+}
+
 .hero-image-cover {
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 100%;
 	height: 100%;
-	background-image: url('../img/home-cover.jpg');
-	background-repeat: repeat-x;
-	background-position: 60% 20%;
-	filter: blur(2px) sepia(5%);
-	-webkit-filter: blur(2px);
-	-moz-filter: blur(2px);
-	-o-filter: blur(2px);
-	-ms-filter: blur(2px);
 }
 
 .link-button {

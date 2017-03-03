@@ -11,7 +11,7 @@
                 <a href="/">&laquo; Home</a>
 
                 @if($success == true)
-                <ul class="list-group">
+                <ul class="list-group delete-5s">
                     <li class="list-group-item">
                         <span class="text-success"><strong>Settings updated!</strong></span>
                     </li>

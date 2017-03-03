@@ -32,7 +32,7 @@
                                     <span class="by">posted by </span>
                                     <a class="authors" href="/articles/by/{{ $music->writer->id }}">{{ $music->writer->name }}</a>
                                     <span class="by"> on </span>
-                                    <span class="authors">{{ Carbon\Carbon::parse($music->created_at)->format('l jS F Y') }}</span>
+                                    <span class="authors">{{ Carbon\Carbon::parse($music->created_at)->format('l, jS F Y') }}</span>
                                 </p>
                             </div>
                         </div>

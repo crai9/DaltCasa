@@ -64,6 +64,12 @@
                             </form>
                         </li>
 
+                            <li class="">
+                                <a class="nav-item" href="/settings">
+                                    <span class="meta dropdown-link">Settings</span>
+                                </a>
+                            </li>
+
                         @endif
 
                         @permission('edit-site')

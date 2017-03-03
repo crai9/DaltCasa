@@ -33,6 +33,8 @@
                             <p class="text-muted">
                                 <span class="by">by </span>
                                 <a class="authors" href="/articles/by/{{ $articles->get($i)->writer->id }}">{{ $articles->get($i)->writer->name }}</a>
+                                <span class="by"> on </span>
+                                <span class="authors">{{ Carbon\Carbon::parse($articles->get($i)->created_at)->format('l, jS F Y') }}</span>
                             </p>
                         </div>
                     </div>

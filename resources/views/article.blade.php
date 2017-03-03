@@ -14,7 +14,7 @@
         <br>
         <span class="article-details">
             <span class="glyphicon glyphicon-time faded-icon" aria-hidden="true"></span>
-            {{ Carbon\Carbon::parse($article->created_at)->format('l jS F Y') }} ·
+            {{ Carbon\Carbon::parse($article->created_at)->format('l, jS F Y') }} ·
             <span class="text-muted">by </span><a class="authors" href="/articles/by/{{ $article->writer->id }}">{{ $article->writer->name }}</a> ·
             <span class="glyphicon glyphicon-comment faded-icon" aria-hidden="true"></span>
             <a href="#disqus_thread" class="disqus-comment-count authors" data-disqus-identifier="{{ $article->id }}">0</a>
