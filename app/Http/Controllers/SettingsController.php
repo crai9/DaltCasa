@@ -21,6 +21,45 @@ class SettingsController extends Controller
         return view('admin');
     }
 
+    public function users()
+    {
+        $users = User::all();
+        return view('manageUsers')->with(['users' => $users]);
+    }
+
+    public function changePermissionView(User $user)
+    {
+        return view('changePermission')->with(['user' => $user]);
+    }
+
+    public function changePermission(User $user, Request $request)
+    {
+
+        $this->validate($request, [
+            'admin' => 'boolean',
+            'writer' => 'boolean',
+        ]);
+
+        $admin = Role::where('name', 'admin')->first();
+        if($request->input('admin') == true && !$user->hasRole('admin')) {
+            $user->attachRole($admin);
+        }
+        if($request->input('admin') == false && $user->hasRole('admin')) {
+            $user->detachRole($admin);
+        }
+
+        $writer = Role::where('name', 'writer')->first();
+        if($request->input('writer') == true && !$user->hasRole('writer')) {
+            $user->attachRole($writer);
+        }
+        if($request->input('writer') == false && $user->hasRole('writer')) {
+            $user->detachRole($writer);
+        }
+
+        return redirect('/admin/users');
+    }
+
+
     public function userSettings()
     {
         return view('userSettings')->with(['user' => Auth::user(), 'success' => false]);

@@ -72,7 +72,7 @@
 
                         @endif
 
-                        @permission('edit-site')
+                        @permission('write-article')
 
                         <li class="">
                             <a class="nav-item" href="/admin">

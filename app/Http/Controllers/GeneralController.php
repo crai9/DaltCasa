@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
+use App\Event;
 use App\User;
 use Illuminate\Http\Request;
 use App\FeaturedItem;
 use App\Article;
 use App\Music;
 use Parsedown;
+use Illuminate\Support\Facades\Auth;
 
 class GeneralController extends Controller
 {
@@ -26,6 +29,7 @@ class GeneralController extends Controller
         }
 
         $article->body = $this->parsedown->text($article->body);
+        //$article->increment('view_count');
         return view('article', ['article' => $article]);
     }
 
@@ -60,6 +64,25 @@ class GeneralController extends Controller
         return view('articles', ['articles' => $articles]);
     }
 
+    public function listEvents()
+    {
+        $events = Event::where('published', 1)->get();
+
+        return view('events', ['events' => $events]);
+    }
+
+    public function showEvent($slug)
+    {
+        $event = Event::where([['unique_slug', $slug], ['published', 1]])->first();
+
+        if(!$event){
+            abort(404);
+        }
+
+        $event->body = $this->parsedown->text($event->body);
+        return view('event', ['event' => $event]);
+    }
+
     public function homePage()
     {
         $featuredItems = FeaturedItem::all();
@@ -79,13 +102,24 @@ class GeneralController extends Controller
         return view('about');
     }
 
-    public function events()
-    {
-        return view('events');
-    }
-
     public function contact()
     {
         return view('contact');
+    }
+
+    public function contactPost(Request $request)
+    {
+        if(!Auth::user()){
+            return "You're not logged in";
+        }
+
+        $contact = new Contact();
+
+        $contact->message = $request->input('message');
+        $contact->user_id = Auth::user()->id;
+
+        $contact->save();
+
+        return redirect('/');
     }
 }

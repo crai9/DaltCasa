@@ -14,7 +14,7 @@
                     <hr>
                     @if(count($musics) == 0)
                         <li class="list-group-item">
-                            <span class="text-danger">There are no articles!</span>
+                            <span class="text-danger">There's no music right now</span>
                         </li>
                     @endif
                     @foreach ($musics as $music)

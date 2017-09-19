@@ -1,5 +1,4 @@
 @extends('layouts.page')
-
 @section('css', '<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">')
 @section('js')
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
@@ -12,14 +11,14 @@
 
 <div class="container">
 
-        <h1 class="post-title">New Article</h1>
+        <h1 class="post-title">New Event</h1>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <a href="/admin">&laquo; Admin home</a>
                 <div class="panel panel-default panel-spacing">
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/article') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/event') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -40,50 +39,81 @@
                                 <label for="image" class="col-md-4 control-label">Image</label>
 
                                 <div class="col-md-6">
-                                    <input id="image" type="text" class="form-control" name="image" value="{{ old('image') }}" placeholder="Image URL" required>
+                                    <input id="image" type="text" class="form-control" name="image" value="{{ old('image') }}">
 
                                     @if ($errors->has('image'))
-                                        <span class="help-block">
+                                    <span class="help-block">
                                         <strong>{{ $errors->first('image') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('introduction') ? ' has-error' : '' }}">
-                                <label for="introduction" class="col-md-4 control-label">Introduction</label>
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <label for="address" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="introduction" rows="2" type="text" class="form-control" name="introduction" required>{{ old('introduction') }}</textarea>
+                                    <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
 
-                                    @if ($errors->has('introduction'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('introduction') }}</strong>
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="body" class="col-md-4 control-label"></label>
-                                <div class="col-md-7">
-                                    <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                        Show formatting info
-                                    </button>
+                            <div class="form-group{{ $errors->has('embed') ? ' has-error' : '' }}">
+                                <label for="embed" class="col-md-4 control-label">Map Embed</label>
 
-                                    <div class="collapse margin-top-15" id="collapseExample">
-                                        <div class="well well-lg formatting">
-                                            @include('formatting')
-                                        </div>
-                                    </div>
+                                <div class="col-md-6">
+                                    <input id="embed" type="text" class="form-control" name="embed" value="{{ old('embed') }}" placeholder="Use instructions below" required>
+
+                                    @if ($errors->has('embed'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('embed') }}</strong>
+                                    </span>
+                                    @endif
+                                    <br>
+                                    <label>
+                                        <span class="text-info">Find location on Google Maps, click share, go to "Embed map" tab, copy highlighted text using medium size.</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
+                                <label for="date" class="col-md-4 control-label">Date</label>
+
+                                <div class="col-md-6">
+                                    <input placeholder="Format: 2017-04-04" id="date" type="text" class="form-control" name="date" value="{{ old('date') }}">
+
+                                    @if ($errors->has('date'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
+                                <label for="date" class="col-md-4 control-label">Time</label>
+
+                                <div class="col-md-6">
+                                    <input placeholder="Format: 18:00:00" id="time" type="text" class="form-control" name="time" value="{{ old('time') }}">
+
+                                    @if ($errors->has('time'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('time') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
-                                <label for="body" class="col-md-4 control-label">Body</label>
+                                <label for="body" class="col-md-4 control-label">Event Details</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="body" rows="12" class="form-control" name="body">{{ old('body') }}</textarea>
+                                    <textarea placeholder="Not required" id="body" rows="5" class="form-control" name="body">{{ old('body') }}</textarea>
 
                                     @if ($errors->has('body'))
                                     <span class="help-block">
@@ -93,50 +123,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                                <label for="category" class="col-md-4 control-label">Category</label>
-
-                                <div class="col-md-3">
-                                    <select id="category-drop" class="form-control" name="category-drop">
-                                        <option value="0">Pick Existing Category</option>
-                                        @foreach($categories as $category)
-                                            <option value="{{ $category->category }}">{{ $category->category }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('category-drop'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('category-drop') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-
-                                <div class="col-md-3">
-                                    <input id="category" value="{{ old('category') }}" class="form-control" placeholder="Or enter new Category" name="category">
-
-                                    @if ($errors->has('category'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('category') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
                             <div class="form-group{{ $errors->has('publish') ? ' has-error' : '' }}">
                                 <label for="publish" class="col-md-4 control-label">Publish?</label>
 
                                 <div class="col-md-6">
-
-                                    @permission('publish-article')
-
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="publish" id="optionsRadios1" value="yes">
                                             yes
                                         </label>
                                     </div>
-
-                                    @endpermission
-
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="publish" id="optionsRadios2" value="no" checked>

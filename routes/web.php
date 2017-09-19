@@ -11,17 +11,28 @@
 |
 */
 
-Route::group(['prefix' => 'admin', 'middleware' => ['permission:edit-site']], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['permission:write-article']], function() {
 
     Route::get('/', 'SettingsController@home');
     Route::resource('/article', 'ArticleController', ['except' => ['show']]);
+
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => ['permission:edit-site']], function() {
+
     Route::resource('/music', 'MusicController', ['except' => ['show']]);
     Route::post('/article/{id}/delete', 'ArticleController@destroy');
     Route::post('/article/{id}/update', 'ArticleController@update');
     Route::post('/music/{id}/delete', 'MusicController@destroy');
     Route::post('/music/{id}/update', 'MusicController@update');
+    Route::resource('/event', 'EventController', ['except' => ['show']]);
+    Route::post('/event/{id}/delete', 'EventController@destroy');
+    Route::post('/event/{id}/update', 'EventController@update');
     Route::get('/featured/edit', 'SettingsController@editFeatured');
     Route::post('/featured/update', 'SettingsController@updateFeatured');
+    Route::get('/users', 'SettingsController@users');
+    Route::get('/users/{user}', 'SettingsController@changePermissionView');
+    Route::post('/users/{user}/update', 'SettingsController@changePermission');
 
 });
 
@@ -42,8 +53,11 @@ Route::get('/articles/by/{id}', 'GeneralController@showWritersArticles');
 Route::get('/music/{slug}', 'GeneralController@showMusic');
 Route::get('/music', 'GeneralController@music');
 
-Route::get('/events', 'GeneralController@events');
+Route::get('/events/{slug}', 'GeneralController@showEvent');
+Route::get('/events', 'GeneralController@listEvents');
+
 Route::get('/about', 'GeneralController@about');
 Route::get('/contact', 'GeneralController@contact');
+Route::post('/contact/submit', 'GeneralController@contactPost');
 
 Auth::routes();

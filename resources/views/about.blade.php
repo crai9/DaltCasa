@@ -115,7 +115,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                        <a href="#" class="">
+                        <a href="https://www.snapchat.com/add/daltcasa" class="">
                             <img src="/img/icons/snapchat-128.png" class="img-responsive">
                         </a>
                     </div>
@@ -124,7 +124,7 @@
                             <a href="#">Snapchat</a>
                         </h3>
                         <p>Add our Snapchat account: </p>
-                        <strong>"DaltCasa?" </strong>
+                        <strong>"DaltCasa" </strong>
                     </div>
                 </div>
                 <hr>

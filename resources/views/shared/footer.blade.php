@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li>
-                <a href="/about#snapchat">
+                <a href="https://www.snapchat.com/add/daltcasa">
                     <img src="/img/icons/snapchat-128.png">
                 </a>
             </li>
