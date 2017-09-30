@@ -15,7 +15,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Member?</th>
+                                <th>Paid Member?</th>
                                 <th>Roles</th>
                                 <th>Action</th>
                             </tr>

@@ -2,8 +2,6 @@
 
 @section('main')
 
-    {{--{{ empty(old('admin')) ? $user->hasRole('admin') : old('admin') }}--}}
-
 <div class="container">
     <h1 class="post-title">{{ $user->name . "'s permissions" }}</h1>
 
@@ -12,7 +10,7 @@
             <a href="/admin">&laquo; Admin home</a>
             <div class="panel panel-default panel-spacing">
                 <div class="panel-body">
-                    Member: {{ $user->member_status ? "Yes" : "No" }}
+                    Paid Member: {{ $user->member_status ? "Yes" : "No" }}
                     <br>
                     User ID: {{ $user->id }}
                     <br>
